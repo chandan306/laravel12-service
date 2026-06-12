@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrationController;
 
 Route::get('/', function () {
     return view('home');
@@ -23,3 +24,4 @@ Route::get('/contact', function () {
 Route::get('/portfolio', function () {
     return view('portfolio');
 }); 
+Route::get('/hello',[RegistrationController::class,'index']);

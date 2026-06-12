@@ -116,9 +116,7 @@
 
             <span class="carousel-control-next-icon"></span>
         </button>
-
     </div>
-
 </section>
 
 <!-- About -->
@@ -142,7 +140,6 @@
                     Read More
                 </a>
             </div>
-
         </div>
     </div>
 </section>
@@ -198,7 +195,7 @@
                     </div>
                 </div>
             </div>
-             <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="card service-card h-100 shadow">
                     <div class="card-body text-center">
                         <i class="bi bi-code-slash fs-1 text-primary"></i>
@@ -277,5 +274,4 @@
         </div>
     </div>
 </section>
-
 @endsection
