@@ -26,35 +26,45 @@
                 <div class="card border-0 shadow">
                     <div class="card-body p-4">
                         <h2 class="fw-bold mb-4">Send Message</h2>
-
-                        <form>
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                        <form action="{{ route('contact.store') }}" method="post"> 
+                            @csrf
                             <div class="mb-3">
                                 <label class="form-label"> Full Name </label>
 
-                                <input type="text" class="form-control" placeholder="Enter your name" />
+                                <input type="text" name="name"  class="form-control" placeholder="Enter your name" />
+                                  @error('name')<span style="color:red">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label"> Email Address </label>
 
-                                <input type="email" class="form-control" placeholder="Enter your email" />
+                                <input type="email" name="email" class="form-control" placeholder="Enter your email" />
+                                 @error('email')<span style="color:red">{{ $message }}</span> @enderror
                             </div>
                             <div class="mb-3">
                                 <label class="form-label"> Mobile No </label>
 
-                                <input type="numbar" class="form-control" placeholder="Enter your Mobile No" />
+                                <input type="numbar" name="phone"  class="form-control" placeholder="Enter your Mobile No" />
+                                 @error('phone')<span style="color:red">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label"> Subject </label>
 
-                                <input type="text" class="form-control" placeholder="Enter subject" />
+                                <input type="text" name="subject" class="form-control" placeholder="Enter subject" />
+                                 @error('subject')<span style="color:red">{{ $message }}</span> @enderror
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label"> Message </label>
 
-                                <textarea class="form-control" rows="7" placeholder="Write your message"></textarea>
+                                <textarea class="form-control" name="message" rows="7" placeholder="Write your message"></textarea>
+                                 @error('message')<span style="color:red">{{ $message }}</span> @enderror
                             </div>
 
                             <button class="btn btn-primary w-100">Send Message</button>

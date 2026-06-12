@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ContactsController;
 
 Route::get('/', function () {
     return view('home');
@@ -25,3 +26,4 @@ Route::get('/portfolio', function () {
     return view('portfolio');
 }); 
 Route::get('/hello',[RegistrationController::class,'index']);
+Route::post('/contact', [ContactsController::class, 'store'])->name('contact.store');
