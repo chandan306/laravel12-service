@@ -25,5 +25,9 @@ Route::get('/contact', function () {
 Route::get('/portfolio', function () {
     return view('portfolio');
 }); 
-Route::get('/hello',[RegistrationController::class,'index']);
+
+
+Route::get('/register', [RegistrationController::class, 'showRegister']);
+Route::post('/register', [RegistrationController::class, 'register'])->name('register.store');
+
 Route::post('/contact', [ContactsController::class, 'store'])->name('contact.store');
