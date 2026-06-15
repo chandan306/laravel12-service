@@ -14,7 +14,7 @@ class RegistrationController extends Controller
 
     public function register(Request $request)
     {
-        return "Registration Success chandan";
+        return "Registration Success";
     }
 }
 use App\Http\Controllers\HelloController;
