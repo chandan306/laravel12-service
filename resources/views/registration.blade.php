@@ -35,51 +35,49 @@
                         <div class="card-body">
                             <form action="{{ route('register.store') }}" method="POST">
                                 @csrf
-
                                 <div class="mb-3">
                                     <label>Name</label>
                                     <input type="text" name="name" class="form-control" />
+                                    @error('name')<span style="color:red">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Email</label>
                                     <input type="email" name="email" class="form-control" />
+                                    @error('email')<span style="color:red">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Password</label>
                                     <input type="password" name="password" class="form-control" />
+                                    @error('password')<span style="color:red">{{ $message }}</span> @enderror
                                 </div>
 
                                 <div class="mb-3">
                                     <label>Confirm Password</label>
                                     <input type="password" name="password_confirmation" class="form-control" />
+                                    @error('password_confirmation')<span style="color:red">{{ $message }}</span> @enderror
                                 </div>
-
                                 <div class="mb-3 row align-items-center">
                                     <label class="col-md-3 col-form-label">
                                         Captcha <span class="text-danger">*</span>
                                     </label>
-
                                     <div class="col-md-4">
                                         <input
                                             type="text"
                                             name="captcha"
                                             class="form-control"
                                             placeholder="Enter Captcha"
-                                            required
                                         />
                                     </div>
-
                                     <div class="col-md-4">
                                         <span id="captcha-img"> {!! captcha_img() !!} </span>
                                     </div>
-
                                     <div class="col-md-1">
                                         <button type="button" class="btn btn-secondary" id="reload">↻</button>
                                     </div>
+                                     @error('captcha')<span style="color:red">{{ $message }}</span> @enderror
                                 </div>
-
                                 <button type="submit" class="btn btn-success w-100">Register</button>
                             </form>
                         </div>
